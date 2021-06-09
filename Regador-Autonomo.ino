@@ -3,13 +3,13 @@
 
 #define SensorUmipinoA A0 //Definindo pino analogico do sensor de umidade
 #define SensorUmipinoD 2 //Definindo pino digital do sensor de umidade
-#define Buzzer 4 //Defininfo pino digital buzzer
+#define AtivacaoRele 4 //Defininfo pino digital buzzer
 int tempoChec = 3600*1000;
 
 void setup() 
 { 
   pinMode(SensorUmipinoD, INPUT); //Definindo o pino 2 como pino de entrada
-  pinMode(Buzzer, OUTPUT);
+  pinMode(AtivacaoRele, OUTPUT);
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo)  
 }
 
@@ -32,7 +32,6 @@ void loop()
   if (analogRead(SensorUmipinoA) < 370 && analogRead(SensorUmipinoA) >250)
   {
     //Nivel de umidade perfeito
-    noTone(Buzzer);
     Serial.print("Nivel de umidade perfeita \n");
     }
   else if (analogRead(SensorUmipinoA)< 249)
@@ -43,10 +42,17 @@ void loop()
   else
   {
     //Pouca umidade
-    tone(Buzzer,392);//Alerta sonoro para indicar que a planta precisa de agua
     tempoChec = 1000;
+    BombaDeAgua();
     Serial.print("Pouca Umidade\n");
     }
     
   delay(tempoChec);
+}
+
+void BombaDeAgua()
+{
+    digitalWrite(AtivacaoRele, HIGH);
+    delay(5000);
+    digitalWrite(AtivacaoRele, LOW);
 }
