@@ -56,6 +56,7 @@ void loop()
   {
     //Pouca umidade
     tone(Buzzer,392);//Alerta sonoro para indicar que a planta precisa de agua
+    ServoMotor();// Chamada do servo para aguar a planta
     tempoChec = 1000;
     Serial.print("Pouca Umidade\n");
     }
