@@ -11,12 +11,12 @@ Servo meuservo;// Definindo o servo
 int ang = 0;// Adicionando a variavel que vai ser o angulo do servo motor
 
 void ServoMotor(){
-    for(ang = 0; ang <= 180; ang++){
-        meuservo.write(ang);
-        delay(15);
-        Serial.println(ang);
-    }
-
+  for(ang = 0; ang <= 180; ang++){
+      meuservo.write(ang);
+      delay(15);
+      Serial.println(ang);
+  }
+}
 void setup() { 
   pinMode(SensorUmipinoD, INPUT); //Definindo o pino 2 como pino de entrada
   pinMode(Buzzer, OUTPUT);
