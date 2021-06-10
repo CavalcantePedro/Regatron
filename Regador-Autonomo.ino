@@ -1,21 +1,32 @@
 /* ------------ REGA AUTONOMA ------------ */
 //Programa desenvolvido para a disciplina de Intrododução a engenharia de computação
 
+#include <Servo.h>
 #define SensorUmipinoA A0 //Definindo pino analogico do sensor de umidade
 #define SensorUmipinoD 2 //Definindo pino digital do sensor de umidade
 #define Buzzer 4 //Defininfo pino digital buzzer
-int tempoChec = 3600*1000;
 
-void setup() 
-{ 
+
+int tempoChec = 3600*1000;
+Servo meuservo;// Definindo o servo
+int ang = 0;// Adicionando a variavel que vai ser o angulo do servo motor
+
+void ServoMotor(){// Servo Motor vai segurar a mangueira que vai realizar a ação de aguar
+  for(ang = 0; ang <= 180; ang++){
+      meuservo.write(ang);
+      delay(15);
+      Serial.println(ang);
+  }
+}
+
+void setup() { 
   pinMode(SensorUmipinoD, INPUT); //Definindo o pino 2 como pino de entrada
   pinMode(Buzzer, OUTPUT);
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo)  
+  meuservo.attach(4); // Porta que vai ser inserido o pino do servo motor
 }
 
-void loop() 
-{
-  
+void loop() {
   tempoChec = 3600*1000;
   Serial.print("Digital : ");
   if(digitalRead(SensorUmipinoD))
@@ -44,6 +55,7 @@ void loop()
   {
     //Pouca umidade
     tone(Buzzer,392);//Alerta sonoro para indicar que a planta precisa de agua
+    ServoMotor();// Chamada do servo para aguar a planta
     tempoChec = 1000;
     Serial.print("Pouca Umidade\n");
     }
