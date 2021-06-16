@@ -3,7 +3,8 @@
 
 #include <Servo.h>
 
-#define SensorUmipinoA A0 //Definindo pino analogico do sensor de umidade
+#define SensorUmipinoD 3
+#define PinoServo 4
 #define AtivacaoRele 2 //Definindo pino digital para o rele
 
 int tempoChec = 3600*1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
@@ -29,36 +30,29 @@ void ServoMotor()// Servo Motor vai segurar a mangueira que vai realizar a açã
 
 void setup() { 
   pinMode(AtivacaoRele, OUTPUT);// Deinindo como pin de saida
-  meuservo.attach(4); // Porta que vai ser inserido o pino do servo motor
+  pinMode(SensorUmipinoD, INPUT);
+  meuservo.attach(PinoServo); // Porta que vai ser inserido o pino do servo motor
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo) 
 }
 
 void loop() 
 { 
-  Serial.print(analogRead(SensorUmipinoA));
-  Serial.print("\n");
   
-  if (analogRead(SensorUmipinoA) <= 420 && analogRead(SensorUmipinoA) >250)
-  {
-    //Nivel de umidade perfeito
-    tempoChec = 3600*1000; //Quando a planta é regada o delay volta a ser de 1 hora
-    Serial.print("Nivel de umidade perfeita \n");
-  }
- 
-  else if (analogRead(SensorUmipinoA)< 249)
-  {
-    //Muita umidade
-    Serial.print("Muita umidade\n");
-  }
+  if(digitalRead(SensorUmipinoD))
+   {
+     //Sem Umidade
+      tempoChec = 1000;// Diminui o tempo de checagem para um segundo até que a planta seja regada
+      BombaDeAgua();//Chama a função que ativa a bomba de agua
+      ServoMotor();// Chamada do servo para aguar a planta
+      Serial.print("Pouca Umidade\n");
+    }
+  else{
+      //Com Umidade
+       tempoChec = 3600*1000; //Quando a planta é regada o delay volta a ser de 1 hora
+       Serial.print("Nivel de umidade perfeita \n");
+    }
+    
   
-  else
-  {
-    //Pouca umidade
-    tempoChec = 1000;// Diminui o tempo de checagem para um segundo até que a planta seja regada
-    BombaDeAgua();//Chama a função que ativa a bomba de agua
-    ServoMotor();// Chamada do servo para aguar a planta
-    Serial.print("Pouca Umidade\n");
-  }
     
   delay(tempoChec);//Pausa de tempo até a proxima checagem
 }
