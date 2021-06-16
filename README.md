@@ -1,5 +1,5 @@
 # Regatron
-<div style="text-align: left"> O Regatron foi desenvolvido com a finalidade de otimizar o processo de cuidado da planta, a qual terá sua umidade checada de 1 em 1 hora e dependendo da sua umidade, a planta será irrigada.É importante destacar que o processo acontecerá de maneira autônoma.</div>
+<div style="text-align: left"> O Regatron foi desenvolvido com a finalidade de otimizar o processo de cuidado da planta, a qual terá sua umidade checada de 1 em 1 hora e dependendo da sua umidade, a planta será irrigada. É importante destacar que o processo acontecerá de maneira autônoma.</div>
 
 <br>
     <div align="center">
@@ -25,8 +25,8 @@
 ## Orçamento:
 TOTAL     | Valor    |
 ----------| ---------|
-Materias  | R$ 200,00| 
-|
+Materias  | <INSERIRVALOR>| 
+
 
 ## Colaboradores
 - [Pedro Lucas Valeriano de Mira](https://github.com/JovemPedr0)
