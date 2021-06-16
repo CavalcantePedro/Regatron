@@ -3,7 +3,7 @@
 
 <br>
     <div align="center">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/61tT0NH11AL._AC_SX425_.jpg" width = "300" height = "300">
+    <img src="https://lh3.googleusercontent.com/pw/ACtC-3fVSBZ0XF-mUcv7a3J-DNii5sXyQyVQS8M5dN_CReYTNwVIgeyLImmg7FHC9m2ZPTLOG7ZmtUNUiZpeY2ChBNOmF3VJDTpZT4EUe4C3clmmlQsKffZQcGmOBnoARhBDGCGYeP_Nuu5uqdVwxI4hohh4=s500-no?authuser=0" width = "300" height = "300" tilte = "Logo do Projeto">
     </div>
 </br>
 
