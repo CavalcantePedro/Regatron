@@ -6,10 +6,15 @@
 #define SensorUmipinoD 3
 #define PinoServo 4
 #define AtivacaoRele 2 //Definindo pino digital para o rele
+#define TRIGGER 9 //Definindo pino para o trigger do sensor ultrassonico
+#define ECHO 8 //Definindo pino para o echo do sensor ultrassonico
+#define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
+#define REPOR_AGUA 3 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 
 int tempoChec = 3600*1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
 Servo meuservo;// Definindo o servo
 int ang = 0;// Adicionando a variavel que vai ser o angulo do servo motor
+double dPulso, distancia; // variaveis definidas para a distancia em CM e distancia dos pulsos do sensor ultrassonico
 
 void BombaDeAgua()
 {
@@ -28,11 +33,26 @@ void ServoMotor()// Servo Motor vai segurar a mangueira que vai realizar a açã
   }
 }
 
+double calculod(){
+    
+  digitalWrite(TRIGGER, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER, LOW);
+  dPulso= pulseIn(ECHO, HIGH);
+                                /*A função calcula a distancia atraves das ondas de entrada e saida do sensor.
+                                Retornando esse pulso que sera armazenado na variavel distancia.*/
+  
+  return  dPulso/58;
+}
+
 void setup() { 
   pinMode(AtivacaoRele, OUTPUT);// Deinindo como pin de saida
   pinMode(SensorUmipinoD, INPUT);
   meuservo.attach(PinoServo); // Porta que vai ser inserido o pino do servo motor
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo) 
+  pinMode(TRIGGER, OUTPUT); //Porta de saida do ultrassonico
+  pinMode(ECHO, INPUT); //porta de entrada do ultrassonico
+  pinMode(BuzzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
 }
 
 void loop() 
@@ -52,7 +72,17 @@ void loop()
        Serial.print("Nivel de umidade perfeita \n");
     }
     
-  
-    
   delay(tempoChec);//Pausa de tempo até a proxima checagem
+
+  distancia = calculod(); // chama a função para calcular a distancia
+  
+  if(distancia <= REPOR_AGUA){
+      tone(BuzzzerUltrassonico, 279.6); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
+  }else{
+    noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
+  }
+  
+  Serial.print("distancia: ");
+  Serial.print(distancia);
+  Serial.println(" cm");
 }
