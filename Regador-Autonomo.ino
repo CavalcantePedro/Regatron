@@ -1,11 +1,16 @@
-/* ------------ REGA AUTONOMA ------------ */
-//Programa desenvolvido para a disciplina de Intrododução a engenharia de computação
-
+/**
+ ============================================================================
+ Nome      : REGATRON
+ Autores    : João Roberto de Oliveira Ferreira, Matheus Ferreira Miranda da Paixão, Pedro Lucas Valeriano de Mira e Pedro Ricardo Cavalcante Silva Filho.
+ Descricao : Projeto realizado em grupo para a disciplina de Introdução à Engenharia da Computação. O qual consiste em um sistema de irrigação inteligente.
+ ============================================================================
+*/
 #include <Servo.h>
 
+// Definições de Pinos para implementações de módulos!
 #define SensorUmipinoD 3
 #define PinoServo 4
-#define AtivacaoRele 2 //Definindo pino digital para o rele
+#define AtivacaoRele 2 
 
 int tempoChec = 3600*1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
 Servo meuservo;// Definindo o servo
