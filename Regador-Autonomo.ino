@@ -2,6 +2,7 @@
 //Programa desenvolvido para a disciplina de Intrododução a engenharia de computação
 
 #include <Servo.h>
+#inlcude <LiquidCrystal.h>
 
 #define SensorUmipinoD 3
 #define PinoServo 4
@@ -15,6 +16,8 @@ int tempoChec = 1000;//Definindo variavel global do tipo int para usar na funç�
 Servo meuservo;// Definindo o servo
 int ang = 40;// Adicionando a variavel que vai ser o angulo do servo motor
 double dPulso, distancia; // variaveis definidas para a distancia em CM e distancia dos pulsos do sensor ultrassonico
+//LiquidCrystal lcd(x, y, z, a, b, c); //Define o lcd com e os pinos para ligar o display
+
 
 void BombaDeAgua()
 {
@@ -65,6 +68,7 @@ void setup() {
   pinMode(TRIGGER, OUTPUT); //Porta de saida do ultrassonico
   pinMode(ECHO, INPUT); //porta de entrada do ultrassonico
   pinMode(BuzzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
+  //lcd.begin(16, 2); //Define o número de colunas e linhas do Display, supondo que seja 16x2
 }
 
 void loop() 
