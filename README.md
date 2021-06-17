@@ -1,6 +1,6 @@
 # Regatron
-<div style="text-align: left"> O Regatron foi desenvolvido com a finalidade de otimizar o processo de cuidado da planta, a qual terá sua umidade checada e dependendo da sua umidade, a planta será irrigada. 
-É importante destacar que o processo acontecerá de maneira autônoma, necessitando apenas do preenchimento do reservátorio de água, o qual será realizado pelo usuário. Como também acrescentar a ideia do projeto ser sustentável por estar reutilizando materiais.</div>
+<div style="text-align: left"> O Regatron foi desenvolvido com a finalidade de otimizar os estágios de desenvolvimento de uma planta, bem como o seu cuidado. Este método identificará os níveis de umidade e realizará irrigações quando necessário. 
+É importante destacar que o processo acontecerá de maneira autônoma. Neste caso, necessitará apenas da manutenção do reservátorio de água. A ideia do projeto é transmitir sustentatibilidade, através de materiais recicláveis.</div>
 
 <br>
     <div align="center">
@@ -8,7 +8,7 @@
     </div>
 </br>
 
-<div style="text-align: left"> Esse projeto foi desenvolvido em grupo com o objetivo de obtenção de nota na disciplina de Introdução a Engenharia da Computação, na Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>UFPB.</a></div>
+<div style="text-align: left"> Esse projeto, desenvolvido em grupo, objetiva a obtenção de nota na disciplina de Introdução à Engenharia da Computação, na Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>(UFPB).</a> Da mesma forma, visa o progresso sustentável unindo tecnologia e o meio ambiente.</div>
 
 
 ## Materiais utilizados:
