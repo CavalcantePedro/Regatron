@@ -16,14 +16,15 @@
 - 1 Protoboard 830 furos - R$ 15,00
 - 1 Módulo Relé 5V - R$ 8,00
 - 1 Bomba de água submersa - R$ 20,00
+- 1 Módulo LCD - R$ 17,90
 - 1 Servo Motor - R$ 12,00
 - 1 Sensor Ultrassônico R$ 10,00
 - 1 Buzzer Piezo - R$ 10,67
 - 1 Fonte externa 9V - R$ 16,06 
 - 1 Chave Gangorra 2 Terminais - R$ 1,50 
 - 2 Garrafas Pets - Reciclado
-<JUMPERS25R$0,43>
-<MODULOLCD>
+
+<JUMPERS25>
 <RESISTOR330Ω>
 
 
