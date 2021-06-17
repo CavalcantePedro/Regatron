@@ -9,7 +9,7 @@
 #define TRIGGER 9 //Definindo pino para o trigger do sensor ultrassonico
 #define ECHO 8 //Definindo pino para o echo do sensor ultrassonico
 #define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
-#define REPOR_AGUA 3 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
+#define REPOR_AGUA 15 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 
 int tempoChec = 1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
 Servo meuservo;// Definindo o servo
@@ -85,7 +85,7 @@ void loop()
   
   distancia = calculod(); // chama a função para calcular a distancia
   
-  if(distancia <= REPOR_AGUA){
+  if(distancia >= REPOR_AGUA){
       tone(BuzzzerUltrassonico, 279.6); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
