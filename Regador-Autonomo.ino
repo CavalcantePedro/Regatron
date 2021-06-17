@@ -11,26 +11,38 @@
 #define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
 #define REPOR_AGUA 3 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 
-int tempoChec = 3600*1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
+int tempoChec = 1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
 Servo meuservo;// Definindo o servo
-int ang = 0;// Adicionando a variavel que vai ser o angulo do servo motor
+int ang = 40;// Adicionando a variavel que vai ser o angulo do servo motor
 double dPulso, distancia; // variaveis definidas para a distancia em CM e distancia dos pulsos do sensor ultrassonico
 
 void BombaDeAgua()
 {
+    int cont = 0;
     digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba
-    delay(3000);//Tempo em que a bomba de água fica ligada.
+    while(cont != 4 )
+    {
+      if(ang <= 40)
+      {
+        for(ang = 40; ang <= 100; ang++)
+         {
+            meuservo.write(ang);
+            delay(15);
+            Serial.println(ang);
+          }
+      }
+      else if (ang >= 100)
+      {
+        for(ang = 100; ang >= 40; ang--)
+         {
+            meuservo.write(ang);
+            delay(15);
+            Serial.println(ang);
+          }
+      }
+      cont++;
+    }
     digitalWrite(AtivacaoRele, LOW);//Desativa a bomba
-}
-
-void ServoMotor()// Servo Motor vai segurar a mangueira que vai realizar a ação de aguar
-{
-  for(ang = 0; ang <= 180; ang++)
-  {
-      meuservo.write(ang);
-      delay(15);
-      Serial.println(ang);
-  }
 }
 
 double calculod(){
@@ -63,17 +75,14 @@ void loop()
      //Sem Umidade
       tempoChec = 1000;// Diminui o tempo de checagem para um segundo até que a planta seja regada
       BombaDeAgua();//Chama a função que ativa a bomba de agua
-      ServoMotor();// Chamada do servo para aguar a planta
       Serial.print("Pouca Umidade\n");
     }
   else{
       //Com Umidade
-       tempoChec = 3600*1000; //Quando a planta é regada o delay volta a ser de 1 hora
        Serial.print("Nivel de umidade perfeita \n");
     }
     
-  delay(tempoChec);//Pausa de tempo até a proxima checagem
-
+  
   distancia = calculod(); // chama a função para calcular a distancia
   
   if(distancia <= REPOR_AGUA){
@@ -85,4 +94,5 @@ void loop()
   Serial.print("distancia: ");
   Serial.print(distancia);
   Serial.println(" cm");
+  delay(tempoChec);//Pausa de tempo até a proxima checagem
 }
