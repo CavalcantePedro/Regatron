@@ -16,7 +16,7 @@ int tempoChec = 1000;//Definindo variavel global do tipo int para usar na fun√ß√
 Servo meuservo;// Definindo o servo
 int ang = 40;// Adicionando a variavel que vai ser o angulo do servo motor
 double dPulso, distancia; // variaveis definidas para a distancia em CM e distancia dos pulsos do sensor ultrassonico
-//LiquidCrystal lcd(x, y, z, a, b, c); //Define o lcd com e os pinos para ligar o display
+//LiquidCrystal lcd(x, y, z, a, b, c); //Define o lcd e os pinos para ligar o display
 
 
 void BombaDeAgua()
