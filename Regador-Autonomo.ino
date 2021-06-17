@@ -34,7 +34,7 @@ void ServoMotor()// Servo Motor vai segurar a mangueira que vai realizar a açã
 }
 
 void setup() { 
-  pinMode(AtivacaoRele, OUTPUT);// Deinindo como pin de saida
+  pinMode(AtivacaoRele, OUTPUT);// Definindo como pin de saida
   pinMode(SensorUmipinoD, INPUT);
   meuservo.attach(PinoServo); // Porta que vai ser inserido o pino do servo motor
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo) 

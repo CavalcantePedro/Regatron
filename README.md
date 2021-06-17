@@ -43,7 +43,7 @@ Materias  | <INSERIRVALOR>|
 
 
 ## Colaboradores
-- [Pedro Lucas Valeriano de Mira](https://github.com/JovemPedr0)
-- [João Roberto de Olveira Ferreira](https://github.com/roberto967)
+- [João Roberto de Oliveira Ferreira](https://github.com/roberto967)
 - [Matheus Ferreira Miranda da Paixão](https://github.com/matheusfer0902)
+- [Pedro Lucas Valeriano de Mira](https://github.com/JovemPedr0)
 - [Pedro Ricardo Cavalcante Silva Filho](https://github.com/CavalcantePedro)
