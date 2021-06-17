@@ -1,6 +1,6 @@
 # Regatron
 <div style="text-align: left"> O Regatron foi desenvolvido com a finalidade de otimizar o processo de cuidado da planta, a qual terá sua umidade checada e dependendo da sua umidade, a planta será irrigada. 
-É importante destacar que o processo acontecerá de maneira autônoma, necessitando apenas do preenchimento do reservátorio de água, o qual será realizado pelo usuário.</div>
+É importante destacar que o processo acontecerá de maneira autônoma, necessitando apenas do preenchimento do reservátorio de água, o qual será realizado pelo usuário. Como também acrescentar a ideia do projeto ser sustentável por estar reutilizando materiais.</div>
 
 <br>
     <div align="center">
