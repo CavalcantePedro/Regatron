@@ -69,6 +69,7 @@ void setup() {
   pinMode(ECHO, INPUT); //porta de entrada do ultrassonico
   pinMode(BuzzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
   //lcd.begin(16, 2); //Define o número de colunas e linhas do Display, supondo que seja 16x2
+  //lcd.print("    Regatron ");
 }
 
 void loop() 
