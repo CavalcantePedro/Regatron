@@ -1,8 +1,13 @@
-/* ------------ REGA AUTONOMA ------------ */
-//Programa desenvolvido para a disciplina de Intrododução a engenharia de computação
+/**
+ ============================================================================
+ Nome      : REGATRON
+ Autores    : João Roberto de Oliveira Ferreira, Matheus Ferreira Miranda da Paixão, Pedro Lucas Valeriano de Mira e Pedro Ricardo Cavalcante Silva Filho.
+ Descricao : Projeto realizado em grupo para a disciplina de Introdução à Engenharia da Computação. O qual consiste em um sistema de irrigação inteligente.
+ ============================================================================
+*/
 
 #include <Servo.h>
-#inlcude <LiquidCrystal.h>
+#include <LiquidCrystal.h>
 
 #define SensorUmipinoD 3
 #define PinoServo 4
