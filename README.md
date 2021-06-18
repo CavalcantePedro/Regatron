@@ -31,7 +31,7 @@
 ## Orçamento:
 TOTAL     | Valor    |
 ----------| ---------|
-Materias  | <INSERIRVALOR>| 
+Materiais  | <INSERIRVALOR>| 
 
 ## Estágios de desenvolvimento do projeto:
 
