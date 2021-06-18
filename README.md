@@ -1,5 +1,5 @@
 # Regatron
-<div style="text-align: left"> O Regatron foi desenvolvido com a finalidade de otimizar os estágios de desenvolvimento de uma planta, bem como o seu cuidado. Este método identificará os níveis de umidade e realizará irrigações quando necessário. 
+<div style="text-align: justify"> O Regatron foi desenvolvido com a finalidade de automatizar os estágios de desenvolvimento de uma planta, bem como o seu cuidado. Esse método identificará os níveis de umidade e realizará irrigações quando necessário. 
 É importante destacar que o processo acontecerá de maneira autônoma. Neste caso, necessitará apenas da manutenção do reservátorio de água. A ideia do projeto é transmitir sustentatibilidade, através de materiais recicláveis.</div>
 
 <br>
@@ -8,39 +8,59 @@
     </div>
 </br>
 
-<div style="text-align: left"> Esse projeto, desenvolvido em grupo, objetiva a obtenção de nota na disciplina de Introdução à Engenharia da Computação, na Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>(UFPB).</a> Da mesma forma, visa o progresso sustentável unindo tecnologia e o meio ambiente.</div>
+<div style="text-align: justify"> Este projeto, desenvolvido em grupo, objetiva a obtenção da última nota na disciplina de Introdução à Engenharia da Computação, da Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>(UFPB).</a> Da mesma forma, visa o progresso sustentável unindo tecnologia e o meio ambiente.</div>
 
 
-## Materiais utilizados:
-- 1 Arduino UNO R3 - R$ 50,00
-- 1 Protoboard 830 furos - R$ 15,00
-- 1 Módulo Relé 5V - R$ 8,00
-- 1 Bomba de água submersa - R$ 20,00
-- 1 Módulo LCD - R$ 17,90
-- 1 Servo Motor - R$ 12,00
-- 1 Sensor Ultrassônico R$ 10,00
-- 1 Buzzer Piezo - R$ 10,67
-- 1 Fonte externa 9V - R$ 16,06 
-- 1 Chave Gangorra 2 Terminais - R$ 1,50 
-- 2 Garrafas Pets - Reciclado
+## Materiais Utilizados e Orçamento:
+Itens     |             Valor          |
+----------| ---------------------------|
+1 Arduino UNO R3 |  R$ 50,00           | 
+1 Protoboard 830 furos | R$ 15,00      |
+1 Módulo Relé 5V |   R$ 8,00           |
+1 Bomba de água submersa | R$ 20,00    |
+1 Módulo LCD   |        R$ 17,90       |
+1 Servo Motor |      R$ 12,00          |
+1 Sensor Ultrassônico |  R$ 10,00      |
+1 Buzzer Piezo |       R$ 10,67        |
+1 Fonte externa 9V |    R$ 16,06       | 
+1 Chave Gangorra 2 Terminais | R$ 1,50 | 
+2 Garrafas Pets |      Reciclado       | 
+35 Jumpers      |    R$ 15.05          |
 
-<JUMPERS25>
-<RESISTOR330Ω>
 
-
-## Orçamento:
-TOTAL     | Valor    |
-----------| ---------|
-Materiais  | <INSERIRVALOR>| 
 
 ## Estágios de desenvolvimento do projeto:
+- Etapa inicial onde foram separados os componentes como sensores e o proprio arduino para elaboração do projeto.
 
 <br>
     <div align="left">
-    <img src="https://lh3.googleusercontent.com/pw/ACtC-3f8YlGO6g9nWCLwKc2PC_IwtNoKX1d4C8YmJcsRwQVzoJqjN5ZTlTv-AXX2XUDg7NORGYWFLXGuyefFIVaBKPecPCm8r12EQgFqplMt7kXYKXkxgiYPqHMEfg4E4FT4WnzsYkOPIs_GJna8YqPDXJFW=w726-h968-no?authuser=0" width = "300" height = "350" tilte = "Início do Projeto">
+    <img src="https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/07_06_2021.jpg" width = "200" height = "250" tilte = "Início do Projeto">
     </div>
 </br>
 
+- Primeiros testes com o sensor de umidade e com o buzzer para indicar quando estivesse com a umidade baixa.
+
+<br>
+    <div align="left">
+    <img src="https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/08_06_2021.png" width = "200" height = "250" tilte = "Início do Projeto">
+    </div>
+</br>
+
+- Implementação da bomba submersa e o relé para o seu controle.
+
+<br>
+    <div align="left">
+    <img src="https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/09_06_2021.jpg" width = "200" height = "250" tilte = "Início do Projeto">
+    </div>
+</br>
+
+- Primeiro estágio de prototipação completo!
+
+<br>
+    <div align="left">
+    <img src="https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/16_06_2021.jpg" width = "200" height = "250" tilte = "Início do Projeto">
+    </div>
+</br>
 
 ## Colaboradores
 - [João Roberto de Oliveira Ferreira](https://github.com/roberto967)
