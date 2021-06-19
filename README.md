@@ -1,6 +1,6 @@
 # Regatron
-<div style="text-align: justify"> O Regatron foi desenvolvido com a finalidade de automatizar os estágios de desenvolvimento de uma planta, bem como o seu cuidado. Esse método identificará os níveis de umidade e realizará irrigações quando necessário. 
-É importante destacar que o processo acontecerá de maneira autônoma. Neste caso, necessitará apenas da manutenção do reservátorio de água. A ideia do projeto é transmitir sustentatibilidade, através de materiais recicláveis.</div>
+<p style="align: justify"> O Regatron foi desenvolvido com a finalidade de automatizar os estágios de desenvolvimento de uma planta, bem como o seu cuidado. Esse método identificará os níveis de umidade e realizará irrigações quando necessário. 
+É importante destacar que o processo acontecerá de maneira autônoma. Nesse caso, necessitará apenas da manutenção do reservátorio de água. A ideia do projeto é transmitir sustentatibilidade, através de materiais recicláveis.</p>
 
 <br>
     <div align="center">
@@ -8,7 +8,7 @@
     </div>
 </br>
 
-<div style="text-align: justify"> Este projeto, desenvolvido em grupo, objetiva a obtenção da última nota na disciplina de Introdução à Engenharia da Computação, da Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>(UFPB).</a> Da mesma forma, visa o progresso sustentável unindo tecnologia e o meio ambiente.</div>
+<div style="align: justify"> Este projeto, desenvolvido em grupo, objetiva a obtenção da última nota na disciplina de Introdução à Engenharia da Computação, da Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>(UFPB).</a> Da mesma forma, visa o progresso sustentável unindo tecnologia e o meio ambiente.</div>
 
 
 ## Materiais Utilizados e Orçamento:
@@ -25,7 +25,9 @@ Itens     |             Valor          |
 1 Fonte externa 9V |    R$ 16,06       | 
 1 Chave Gangorra 2 Terminais | R$ 1,50 | 
 2 Garrafas Pets |      Reciclado       | 
-35 Jumpers      |    R$ 15.05          |
+35 Jumpers      |    R$ 15,05          |
+Materiais decorativos | <valorainserir>|
+Total                | <somainseridos> |
 
 
 
