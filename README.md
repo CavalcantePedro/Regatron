@@ -64,6 +64,13 @@ Total                | <somainseridos> |
     </div>
 </br>
 
+- Implementação do LCD para uma comunicação com usuário.
+
+<br>
+    <div align ="left">
+    <img src = "https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/21_06_2021(2).jpg" width = "200"
+    height = "250" title = "Implementação do LCD">
+
 ## Colaboradores
 - [João Roberto de Oliveira Ferreira](https://github.com/roberto967)
 - [Matheus Ferreira Miranda da Paixão](https://github.com/matheusfer0902)
