@@ -120,6 +120,7 @@ void loop()
     lcd.setCursor(0, 1);
     lcd.print("   REPOR AGUA");
     tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
+    delay(1000);
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
