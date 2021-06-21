@@ -65,6 +65,12 @@ double calculod(){
   return  dPulso/58;
 }
 
+void limpaTela() { //Função que limpa a tela do lcd e exibe o logo.
+  //lcd.clear();
+  //lcd.home();
+  //lcd.print("    Regatron");
+}
+
 void setup() { 
   pinMode(AtivacaoRele, OUTPUT);// Deinindo como pin de saida
   pinMode(SensorUmipinoD, INPUT);
@@ -74,7 +80,7 @@ void setup() {
   pinMode(ECHO, INPUT); //porta de entrada do ultrassonico
   pinMode(BuzzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
   //lcd.begin(16, 2); //Define o número de colunas e linhas do Display, supondo que seja 16x2
-  //lcd.print("    Regatron ");
+  //lcd.print("    Regatron");
 }
 
 void loop() 
@@ -86,21 +92,31 @@ void loop()
       tempoChec = 1000;// Diminui o tempo de checagem para um segundo até que a planta seja regada
       BombaDeAgua();//Chama a função que ativa a bomba de agua
       Serial.print("Pouca Umidade\n");
+      //limpaTela();
+      //lcd.setCursor(0, 1);
+      //lcd.print("Pouca Umidade");
     }
   else{
       //Com Umidade
-       Serial.print("Nivel de umidade perfeita \n");
+      Serial.print("Nivel de umidade perfeita \n");
+      //limpaTela();
+      //lcd.setCursor(0, 1);
+      //lcd.print("Umidade Perfeita");
     }
     
   
   distancia = calculod(); // chama a função para calcular a distancia
   
   if(distancia >= REPOR_AGUA){
-      tone(BuzzzerUltrassonico, 279.6); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
+    //limpaTela();
+    //lcd.setCursor(0, 1);
+    //lcd.print("   REPOR AGUA");
+    tone(BuzzzerUltrassonico, 279.6); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
   
+  //limpaTela(); //Ainda n sei se vai ser necessario, só vendo na pratica quando vai precisar limpar a tela;
   Serial.print("distancia: ");
   Serial.print(distancia);
   Serial.println(" cm");
