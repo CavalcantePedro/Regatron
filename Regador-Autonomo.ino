@@ -74,9 +74,9 @@ double calculod(){
 }
 
 void limpaTela() { //Função que limpa a tela do lcd e exibe o logo.
-  //lcd.clear();
-  //lcd.home();
-  //lcd.print("    Regatron");
+  lcd.clear();
+  lcd.home();
+  lcd.print("    Regatron");
 }
 
 void setup() { 
