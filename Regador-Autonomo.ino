@@ -87,8 +87,8 @@ void setup() {
   pinMode(TRIGGER, OUTPUT); //Porta de saida do ultrassonico
   pinMode(ECHO, INPUT); //porta de entrada do ultrassonico
   pinMode(BuzzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
-  //lcd.begin(16, 2); //Define o número de colunas e linhas do Display, supondo que seja 16x2
-  //lcd.print("    Regatron");
+  lcd.begin(16, 2); //Define o número de colunas e linhas do Display, supondo que seja 16x2
+  cd.print("    Regatron");
 }
 
 void loop() 
@@ -99,32 +99,32 @@ void loop()
      //Sem Umidade
       BombaDeAgua();//Chama a função que ativa a bomba de agua
       Serial.print("Pouca Umidade\n");
-      //limpaTela();
-      //lcd.setCursor(0, 1);
-      //lcd.print("Pouca Umidade");
+      limpaTela();
+      lcd.setCursor(0, 1);
+      lcd.print("Pouca Umidade");
       // Colocar quando estiver regando! tipo Regando com a animação dos três pontos ...
     }
   else{
       //Com Umidade
       Serial.print("Nivel de umidade perfeita \n");
-      //limpaTela();
-      //lcd.setCursor(0, 1);
-      //lcd.print("Umidade Perfeita");
+      limpaTela();
+      lcd.setCursor(0, 1);
+      lcd.print("Umidade Perfeita");
     }
     
   
-  distancia = calculod(); // chama a função para calcular a distancia
+  distancia = calculod(); // chama a função para calcular a agua do reservatorio;
   
   if(distancia >= REPOR_AGUA){
-    //limpaTela();
-    //lcd.setCursor(0, 1);
-    //lcd.print("   REPOR AGUA");
+    limpaTela();
+    lcd.setCursor(0, 1);
+    lcd.print("   REPOR AGUA");
     tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
   
-  //limpaTela(); //Ainda n sei se vai ser necessario, só vendo na pratica quando vai precisar limpar a tela;
+  limpaTela(); //Ainda n sei se vai ser necessario, só vendo na pratica quando vai precisar limpar a tela;
   Serial.print("distancia: ");
   Serial.print(distancia);
   Serial.println(" cm");
