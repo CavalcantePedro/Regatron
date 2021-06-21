@@ -16,8 +16,16 @@
 #define ECHO 8 //Definindo pino para o echo do sensor ultrassonico
 #define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
 #define REPOR_AGUA 15 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
-
-int tempoChec = 1000;//Definindo variavel global do tipo int para usar na função delay, esse valor na função é equivalente a 1 hora. 
+// Angulos que são flexiveis, de acordo com o vaso utilizado muda, como o vaso que usamos foi pequeno os angulos foram esses
+#define ANGULO_MIN 40
+#define ANGULO_MAX 100
+// Movimento realizado pelo servo motor, o qual estará acoplado com uma mangueira
+#define QTD_MOV_SERVO 4
+// Frequencia tocada pelo buzzer
+#define SOM 279.6
+//Definindo variavel global do tipo int para usar na função delay, o qual funciona de 1 em 1 segundo.
+#define TEMPOCHEC  1000;
+ 
 Servo meuservo;// Definindo o servo
 int ang = 40;// Adicionando a variavel que vai ser o angulo do servo motor
 double dPulso, distancia; // variaveis definidas para a distancia em CM e distancia dos pulsos do sensor ultrassonico
@@ -28,20 +36,20 @@ void BombaDeAgua()
 {
     int cont = 0;
     digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba
-    while(cont != 4 )
+    while(cont != QTD_MOV_SERVO )
     {
-      if(ang <= 40)
+      if(ang <= ANGULO_MIN)
       {
-        for(ang = 40; ang <= 100; ang++)
+        for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
          {
             meuservo.write(ang);
             delay(15);
             Serial.println(ang);
           }
       }
-      else if (ang >= 100)
+      else if (ang >= ANGULO_MAX)
       {
-        for(ang = 100; ang >= 40; ang--)
+        for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
          {
             meuservo.write(ang);
             delay(15);
@@ -58,7 +66,7 @@ double calculod(){
   digitalWrite(TRIGGER, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIGGER, LOW);
-  dPulso= pulseIn(ECHO, HIGH);
+  dPulso = pulseIn(ECHO, HIGH);
                                 /*A função calcula a distancia atraves das ondas de entrada e saida do sensor.
                                 Retornando esse pulso que sera armazenado na variavel distancia.*/
   
@@ -89,7 +97,6 @@ void loop()
   if(digitalRead(SensorUmipinoD))
    {
      //Sem Umidade
-      tempoChec = 1000;// Diminui o tempo de checagem para um segundo até que a planta seja regada
       BombaDeAgua();//Chama a função que ativa a bomba de agua
       Serial.print("Pouca Umidade\n");
       limpaTela();
@@ -105,13 +112,14 @@ void loop()
     }
     
   
-  distancia = calculod(); // chama a função para calcular a distancia
+  distancia = calculod(); // chama a função para calcular a agua do reservatorio;
   
   if(distancia >= REPOR_AGUA){
     limpaTela();
     lcd.setCursor(0, 1);
     lcd.print("   REPOR AGUA");
-    tone(BuzzzerUltrassonico, 279.6); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
+    tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
+    delay(1000);
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
@@ -120,5 +128,5 @@ void loop()
   Serial.print("distancia: ");
   Serial.print(distancia);
   Serial.println(" cm");
-  delay(tempoChec);//Pausa de tempo até a proxima checagem
+  delay(TEMPOCHEC);//Pausa de tempo até a proxima checagem
 }
