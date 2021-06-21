@@ -26,8 +26,8 @@ Itens     |             Valor          |
 1 Chave Gangorra 2 Terminais | R$ 1,50 | 
 2 Garrafas Pets |      Reciclado       | 
 35 Jumpers      |    R$ 15,05          |
-Materiais decorativos | <valorainserir>|
-Total                | <somainseridos> |
+Materiais decorativos |   R$ 10,00     |
+Total                |   R$ 186.18     |
 
 
 
