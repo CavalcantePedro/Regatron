@@ -1,8 +1,8 @@
 /**
  ============================================================================
- Nome      : REGATRON
- Autores    : João Roberto de Oliveira Ferreira, Matheus Ferreira Miranda da Paixão, Pedro Lucas Valeriano de Mira e Pedro Ricardo Cavalcante Silva Filho.
- Descricao : Projeto realizado em grupo para a disciplina de Introdução à Engenharia da Computação. O qual consiste em um sistema de irrigação inteligente.
+ Nome: REGATRON
+ Autores: João Roberto de Oliveira Ferreira, Matheus Ferreira Miranda da Paixão, Pedro Lucas Valeriano de Mira e Pedro Ricardo Cavalcante Silva Filho.
+ Descricao: Projeto realizado em grupo para a disciplina de Introdução à Engenharia da Computação. O qual consiste em um sistema de irrigação inteligente.
  ============================================================================
 */
 
@@ -23,8 +23,11 @@
 #define QTD_MOV_SERVO 4
 // Frequencia tocada pelo buzzer
 #define SOM 279.6
-//Definindo variavel global do tipo int para usar na função delay, o qual funciona de 1 em 1 segundo.
-#define TEMPOCHEC  1000;
+//Definindo variavel global para usar na função delay, o qual funciona de 1 em 1 segundo, checando a temperatura da planta
+#define TEMPO_CHEC  1000
+//Definindo o tempo de execução do movimento do servo motor
+#define TEMPO_EXE 15
+
  
 Servo meuservo;// Definindo o servo
 int ang = 40;// Adicionando a variavel que vai ser o angulo do servo motor
@@ -35,7 +38,7 @@ LiquidCrystal lcd(13, 12, 11, 10, 6, 5); //Define o lcd e os pinos para ligar o 
 void BombaDeAgua()
 {
     int cont = 0;
-    digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba
+    digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba de agua e começa o processo de irrigação
     while(cont != QTD_MOV_SERVO )
     {
       if(ang <= ANGULO_MIN)
@@ -43,7 +46,7 @@ void BombaDeAgua()
         for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
          {
             meuservo.write(ang);
-            delay(15);
+            delay(TEMPO_EXE);
             Serial.println(ang);
           }
       }
@@ -52,7 +55,7 @@ void BombaDeAgua()
         for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
          {
             meuservo.write(ang);
-            delay(15);
+            delay(TEMPO_EXE);
             Serial.println(ang);
           }
       }
@@ -80,8 +83,8 @@ void limpaTela() { //Função que limpa a tela do lcd e exibe o logo.
 }
 
 void setup() { 
-  pinMode(AtivacaoRele, OUTPUT);// Deinindo como pin de saida
-  pinMode(SensorUmipinoD, INPUT);
+  pinMode(AtivacaoRele, OUTPUT);// Definindo como pin de saida
+  pinMode(SensorUmipinoD, INPUT);// Sensor de Umidade Definido
   meuservo.attach(PinoServo); // Porta que vai ser inserido o pino do servo motor
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo) 
   pinMode(TRIGGER, OUTPUT); //Porta de saida do ultrassonico
@@ -102,6 +105,7 @@ void loop()
       limpaTela();
       lcd.setCursor(0, 1);
       lcd.print("Pouca Umidade");
+      // Colocar quando estiver regando! tipo Regando com a animação dos três pontos ...
     }
   else{
       //Com Umidade
@@ -119,7 +123,6 @@ void loop()
     lcd.setCursor(0, 1);
     lcd.print("   REPOR AGUA");
     tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
-    delay(1000);
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
