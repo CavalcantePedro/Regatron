@@ -73,7 +73,7 @@ double calculod(){
                                 /*A função calcula a distancia atraves das ondas de entrada e saida do sensor.
                                 Retornando esse pulso que sera armazenado na variavel distancia.*/
   
-  return  dPulso/58;
+  return  dPulso/58; // Cálculo padrão para a conversão do tempo em centímetros 
 }
 
 void limpaTela() { //Função que limpa a tela do lcd e exibe o logo.
