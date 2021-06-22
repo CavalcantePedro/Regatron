@@ -98,15 +98,16 @@ void loop()
 { 
   
   if(digitalRead(SensorUmipinoD))
-   {
-     //Sem Umidade
-      BombaDeAgua();//Chama a função que ativa a bomba de agua
-      Serial.print("Pouca Umidade\n");
-      limpaTela();
-      lcd.setCursor(0, 1);
-      lcd.print("Pouca Umidade");
-      // Colocar quando estiver regando! tipo Regando com a animação dos três pontos ...
-    }
+  {
+    limpaTela();
+    lcd.setCursor(0, 1);
+    lcd.print("Regando");
+    //Sem Umidade
+    BombaDeAgua();//Chama a função que ativa a bomba de agua
+    Serial.print("Pouca Umidade\n");
+     
+    // Colocar quando estiver regando! tipo Regando com a animação dos três pontos ...
+  }
   else{
       //Com Umidade
       Serial.print("Nivel de umidade perfeita \n");
