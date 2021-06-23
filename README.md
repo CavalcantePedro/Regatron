@@ -78,7 +78,7 @@ Total                |   R$ 192.08     |
 
 <br>
     <div align ="left">
-    <img src = https://raw.githubusercontent.com/CavalcantePedro/Regatron/main/Fotos/Prototipa%C3%A7%C3%A3o/23_06_2021(2).jpg widht = "100" height = "150">
+    <img src = https://raw.githubusercontent.com/CavalcantePedro/Regatron/main/Fotos/Prototipa%C3%A7%C3%A3o/23_06_2021(2).jpg widht = "200" height = "200">
     </div>
 </br>
 
