@@ -25,9 +25,10 @@ Itens     |             Valor          |
 1 Fonte externa 9V |    R$ 16,06       | 
 1 Chave Gangorra 2 Terminais | R$ 1,50 | 
 2 Garrafas Pets |      Reciclado       | 
-45 Jumpers      |    R$ 19.35          |
+45 Jumpers      |    R$ 19,35          |
+1m Manngueira de Aquário |   R$ 1,60   |
 Materiais decorativos |   R$ 10,00     |
-Total                |   R$ 186.18     |
+Total                |   R$ 192.08     |
 
 
 
