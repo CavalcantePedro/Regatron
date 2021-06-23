@@ -25,7 +25,7 @@ Itens     |             Valor          |
 1 Fonte externa 9V |    R$ 16,06       | 
 1 Chave Gangorra 2 Terminais | R$ 1,50 | 
 2 Garrafas Pets |      Reciclado       | 
-35 Jumpers      |    R$ 15,05          |
+45 Jumpers      |    R$ 19.35          |
 Materiais decorativos |   R$ 10,00     |
 Total                |   R$ 186.18     |
 
@@ -70,6 +70,14 @@ Total                |   R$ 186.18     |
     <div align ="left">
     <img src = "https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/21_06_2021(2).jpg" width = "200"
     height = "250" title = "Implementação do LCD">
+</br>
+
+- Início do desenvolvimento da parte estética do projeto.
+
+<br>
+    <div align ="left">
+    <img src = https://raw.githubusercontent.com/CavalcantePedro/Regatron/main/Fotos/Prototipa%C3%A7%C3%A3o/23_06_2021(2).jpg widht = "200" height = "250">
+</br>
 
 ## Colaboradores
 - [João Roberto de Oliveira Ferreira](https://github.com/roberto967)
