@@ -12,8 +12,8 @@
 #define SensorUmipinoD 3
 #define PinoServo 4
 #define AtivacaoRele 2 //Definindo pino digital para o rele
-#define TRIGGER 9 //Definindo pino para o trigger do sensor ultrassonico
-#define ECHO 8 //Definindo pino para o echo do sensor ultrassonico
+#define TRIGGER 5 //Definindo pino para o trigger do sensor ultrassonico
+#define ECHO 6 //Definindo pino para o echo do sensor ultrassonico
 #define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
 #define REPOR_AGUA 13 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 // Angulos que são flexiveis, de acordo com o vaso utilizado muda, como o vaso que usamos foi pequeno os angulos foram esses
@@ -32,7 +32,7 @@
 Servo meuservo;// Definindo o servo
 int ang = 40;// Adicionando a variavel que vai ser o angulo do servo motor
 double dPulso, distancia; // variaveis definidas para a distancia em CM e distancia dos pulsos do sensor ultrassonico
-LiquidCrystal lcd(13, 12, 11, 10, 6, 5); //Define o lcd e os pinos para ligar o display
+LiquidCrystal lcd(13, 12, 11, 10, 9, 8); //Define o lcd e os pinos para ligar o display
 
 
 void BombaDeAgua()
@@ -110,10 +110,11 @@ void loop()
   }
   else{
       //Com Umidade
-      Serial.print("Nivel de umidade perfeita \n");
       limpaTela();
       lcd.setCursor(0, 1);
       lcd.print("Umidade Perfeita");
+      Serial.print("Nivel de umidade perfeita \n");
+      
     }
     
   
@@ -122,15 +123,15 @@ void loop()
   if(distancia >= REPOR_AGUA){
     limpaTela();
     lcd.setCursor(0, 1);
-    lcd.print("  REPOR AGUA!");
+    lcd.print("  REPOR AGUA!!");
     tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
   
-  limpaTela(); //Ainda n sei se vai ser necessario, só vendo na pratica quando vai precisar limpar a tela;
+  //limpaTela(); //Ainda n sei se vai ser necessario, só vendo na pratica quando vai precisar limpar a tela;
   Serial.print("distancia: ");
   Serial.print(distancia);
   Serial.println(" cm");
-  delay(TEMPOCHEC);//Pausa de tempo até a proxima checagem
+  delay(TEMPO_CHEC);//Pausa de tempo até a proxima checagem
 }
