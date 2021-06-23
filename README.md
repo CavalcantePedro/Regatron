@@ -70,6 +70,7 @@ Total                |   R$ 186.18     |
     <div align ="left">
     <img src = "https://raw.githubusercontent.com/CavalcantePedro/Regador-Autonomo/main/Fotos/Prototipa%C3%A7%C3%A3o/21_06_2021(2).jpg" width = "200"
     height = "250" title = "Implementação do LCD">
+    </div>
 </br>
 
 - Início do desenvolvimento da parte estética do projeto.
@@ -77,6 +78,7 @@ Total                |   R$ 186.18     |
 <br>
     <div align ="left">
     <img src = https://raw.githubusercontent.com/CavalcantePedro/Regatron/main/Fotos/Prototipa%C3%A7%C3%A3o/23_06_2021(2).jpg widht = "200" height = "250">
+    </div>
 </br>
 
 ## Colaboradores
