@@ -26,7 +26,7 @@ Itens     |             Valor          |
 1 Chave Gangorra 2 Terminais | R$ 1,50 | 
 2 Garrafas Pets |      Reciclado       | 
 45 Jumpers      |    R$ 19,35          |
-1m Manngueira de Aquário |   R$ 1,60   |
+1m Mangueira de Aquário |   R$ 1,60   |
 Materiais decorativos |   R$ 10,00     |
 Total                |   R$ 192.08     |
 
@@ -78,7 +78,7 @@ Total                |   R$ 192.08     |
 
 <br>
     <div align ="left">
-    <img src = https://raw.githubusercontent.com/CavalcantePedro/Regatron/main/Fotos/Prototipa%C3%A7%C3%A3o/23_06_2021(2).jpg widht = "200" height = "250">
+    <img src = https://raw.githubusercontent.com/CavalcantePedro/Regatron/main/Fotos/Prototipa%C3%A7%C3%A3o/23_06_2021(2).jpg widht = "100" height = "150">
     </div>
 </br>
 
