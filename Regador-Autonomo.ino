@@ -15,7 +15,7 @@
 #define TRIGGER 9 //Definindo pino para o trigger do sensor ultrassonico
 #define ECHO 8 //Definindo pino para o echo do sensor ultrassonico
 #define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
-#define REPOR_AGUA 15 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
+#define REPOR_AGUA 13 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 // Angulos que são flexiveis, de acordo com o vaso utilizado muda, como o vaso que usamos foi pequeno os angulos foram esses
 #define ANGULO_MIN 40
 #define ANGULO_MAX 100
