@@ -37,10 +37,27 @@ LiquidCrystal lcd(13, 12, 11, 10, 9, 8); //Define o lcd e os pinos para ligar o 
 
 void BombaDeAgua()
 {
-  int cont = 0;
+  int cont = 1;
   digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba de agua e começa o processo de irrigação
+  delay(500);
+  limpaTela();
   while(cont != QTD_MOV_SERVO )
   {
+    switch(cont)
+         {
+           case 1:
+             lcd.setCursor(0, 1);
+             lcd.print("Regando.");
+            break;
+           case 2:
+             lcd.setCursor(0, 1);
+             lcd.print("Regando..");
+            break;
+           default:
+             lcd.setCursor(0, 1);
+             lcd.print("Regando...");
+          }
+          
     if(ang <= ANGULO_MIN)
     {
       for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
@@ -99,9 +116,7 @@ void loop()
   
   if(digitalRead(SensorUmipinoD))
   {
-    limpaTela();
-    lcd.setCursor(0, 1);
-    lcd.print("Regando...");
+    
     //Sem Umidade
     BombaDeAgua();//Chama a função que ativa a bomba de agua
     Serial.print("Pouca Umidade\n");
