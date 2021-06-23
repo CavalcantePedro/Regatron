@@ -37,31 +37,31 @@ LiquidCrystal lcd(13, 12, 11, 10, 6, 5); //Define o lcd e os pinos para ligar o 
 
 void BombaDeAgua()
 {
-    int cont = 0;
-    digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba de agua e começa o processo de irrigação
-    while(cont != QTD_MOV_SERVO )
+  int cont = 0;
+  digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba de agua e começa o processo de irrigação
+  while(cont != QTD_MOV_SERVO )
+  {
+    if(ang <= ANGULO_MIN)
     {
-      if(ang <= ANGULO_MIN)
-      {
-        for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
-         {
-            meuservo.write(ang);
-            delay(TEMPO_EXE);
-            Serial.println(ang);
-          }
-      }
-      else if (ang >= ANGULO_MAX)
-      {
-        for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
-         {
-            meuservo.write(ang);
-            delay(TEMPO_EXE);
-            Serial.println(ang);
-          }
-      }
-      cont++;
+      for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
+       {
+          meuservo.write(ang);
+          delay(TEMPO_EXE);
+          Serial.println(ang);
+        }
     }
-    digitalWrite(AtivacaoRele, LOW);//Desativa a bomba
+    else if (ang >= ANGULO_MAX)
+    {
+      for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
+       {
+          meuservo.write(ang);
+          delay(TEMPO_EXE);
+          Serial.println(ang);
+        }
+    }
+    cont++;
+  }
+  digitalWrite(AtivacaoRele, LOW);//Desativa a bomba
 }
 
 double calculod(){
