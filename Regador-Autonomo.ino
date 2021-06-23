@@ -101,7 +101,7 @@ void loop()
   {
     limpaTela();
     lcd.setCursor(0, 1);
-    lcd.print("Regando");
+    lcd.print("Regando...");
     //Sem Umidade
     BombaDeAgua();//Chama a função que ativa a bomba de agua
     Serial.print("Pouca Umidade\n");
@@ -122,7 +122,7 @@ void loop()
   if(distancia >= REPOR_AGUA){
     limpaTela();
     lcd.setCursor(0, 1);
-    lcd.print("   REPOR AGUA");
+    lcd.print("  REPOR AGUA!");
     tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
   }else{
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
