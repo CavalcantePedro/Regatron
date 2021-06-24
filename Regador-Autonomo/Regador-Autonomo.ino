@@ -6,27 +6,27 @@
  ============================================================================
 */
 
-#include <Servo.h>
-#include <LiquidCrystal.h>
+#include <Servo.h> //Biblioteca para utilizar o Servo motor
+#include <LiquidCrystal.h> //Biblioteca para utilizar o LCD
 
-#define SensorUmipinoD 3
-#define PinoServo 4
+#define SensorUmipinoD 3 //Pino digital do sensor de umidade 
+#define PinoServo 4 //Pino para o servo
 #define AtivacaoRele 2 //Definindo pino digital para o rele
 #define TRIGGER 5 //Definindo pino para o trigger do sensor ultrassonico
 #define ECHO 6 //Definindo pino para o echo do sensor ultrassonico
 #define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
 #define REPOR_AGUA 13 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 // Angulos que são flexiveis, de acordo com o vaso utilizado muda, como o vaso que usamos foi pequeno os angulos foram esses
-#define ANGULO_MIN 40
-#define ANGULO_MAX 100
+#define ANGULO_MIN 40 //Angulo minimo para o servo
+#define ANGULO_MAX 100//Angulo maximo para o servo
 // Movimento realizado pelo servo motor, o qual estará acoplado com uma mangueira
-#define QTD_MOV_SERVO 4
+#define QTD_MOV_SERVO 4 //Quantidade de movimento que o servo irá fazer
 // Frequencia tocada pelo buzzer
-#define SOM 279.6
+#define SOM 279.6 //Tom do buzzer
 //Definindo variavel global para usar na função delay, o qual funciona de 1 em 1 segundo, checando a temperatura da planta
-#define TEMPO_CHEC  1000
+#define TEMPO_CHEC  1000 //Tempo de checagem 
 //Definindo o tempo de execução do movimento do servo motor
-#define TEMPO_EXE 15
+#define TEMPO_EXE 15 
 
  
 Servo meuservo;// Definindo o servo
@@ -35,15 +35,15 @@ double dPulso, distancia; // variaveis definidas para a distancia em CM e distan
 LiquidCrystal lcd(13, 12, 11, 10, 9, 8); //Define o lcd e os pinos para ligar o display
 
 
-void BombaDeAgua()
+void BombaDeAgua() //Função para realizar a rega
 {
   int cont = 1;
   digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba de agua e começa o processo de irrigação
-  delay(500);
+  delay(500);//Delay para normalizar a corrente e não bagunçar a comunicação com o LCD
   limpaTela();
   while(cont != QTD_MOV_SERVO )
   {
-    switch(cont)
+    switch(cont) //Animação no LCD
          {
            case 1:
              lcd.setCursor(0, 1);
@@ -57,14 +57,14 @@ void BombaDeAgua()
              lcd.setCursor(0, 1);
              lcd.print("Regando...");
           }
-          
+    //Movimento do servo
     if(ang <= ANGULO_MIN)
     {
       for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
-       {
-          meuservo.write(ang);
-          delay(TEMPO_EXE);
-          Serial.println(ang);
+        {
+            meuservo.write(ang);
+            delay(TEMPO_EXE);
+            Serial.println(ang);
         }
     }
     else if (ang >= ANGULO_MAX)
@@ -116,35 +116,34 @@ void loop()
   
   if(digitalRead(SensorUmipinoD))
   {
-    
     //Sem Umidade
     BombaDeAgua();//Chama a função que ativa a bomba de agua
-    Serial.print("Pouca Umidade\n");
-     
-    // Colocar quando estiver regando! tipo Regando com a animação dos três pontos ...
+    Serial.print("Pouca Umidade\n");  
   }
-  else{
+  else
+  {
       //Com Umidade
       limpaTela();
       lcd.setCursor(0, 1);
       lcd.print("Umidade Perfeita");
-      Serial.print("Nivel de umidade perfeita \n");
-      
-    }
+      Serial.print("Nivel de umidade perfeita \n");   
+   }
     
   
   distancia = calculod(); // chama a função para calcular a agua do reservatorio;
   
-  if(distancia >= REPOR_AGUA){
+  if(distancia >= REPOR_AGUA)
+  {
     limpaTela();
     lcd.setCursor(0, 1);
     lcd.print("  REPOR AGUA!!");
     tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
-  }else{
+  }
+  else
+  {
     noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
   }
   
-  //limpaTela(); //Ainda n sei se vai ser necessario, só vendo na pratica quando vai precisar limpar a tela;
   Serial.print("distancia: ");
   Serial.print(distancia);
   Serial.println(" cm");
