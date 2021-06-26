@@ -74,7 +74,7 @@ Total                |   R$ 183,91     |
     </div>
 </br>
 
-- Início do desenvolvimento da parte estética do projeto.
+- Finalização do Regatron!.
 
 <br>
     <div align ="left">
