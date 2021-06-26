@@ -44,37 +44,38 @@ void BombaDeAgua() //Função para realizar a rega
   while(cont != QTD_MOV_SERVO )
   {
     switch(cont) //Animação no LCD
-         {
-           case 1:
-             lcd.setCursor(0, 1);
-             lcd.print("Regando.");
-            break;
-           case 2:
-             lcd.setCursor(0, 1);
-             lcd.print("Regando..");
-            break;
-           default:
-             lcd.setCursor(0, 1);
-             lcd.print("Regando...");
-          }
+    {
+      case 1:
+        lcd.setCursor(0, 1);
+        lcd.print("Regando.");
+        break;
+      case 2:
+        lcd.setCursor(0, 1);
+        lcd.print("Regando..");
+        break;
+      default:
+        lcd.setCursor(0, 1);
+        lcd.print("Regando...");
+        break;
+    }
     //Movimento do servo
     if(ang <= ANGULO_MIN)
     {
       for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
-        {
-            meuservo.write(ang);
-            delay(TEMPO_EXE);
-            Serial.println(ang);
-        }
+      {
+        meuservo.write(ang);
+        delay(TEMPO_EXE);
+        Serial.println(ang);
+      }
     }
     else if (ang >= ANGULO_MAX)
     {
       for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
-       {
-          meuservo.write(ang);
-          delay(TEMPO_EXE);
-          Serial.println(ang);
-        }
+      {
+        meuservo.write(ang);
+        delay(TEMPO_EXE);
+        Serial.println(ang);
+      }
     }
     cont++;
   }
@@ -122,14 +123,13 @@ void loop()
   }
   else
   {
-      //Com Umidade
-      limpaTela();
-      lcd.setCursor(0, 1);
-      lcd.print("Umidade Perfeita");
-      Serial.print("Nivel de umidade perfeita \n");   
-   }
+    //Com Umidade
+    limpaTela();
+    lcd.setCursor(0, 1);
+    lcd.print("Umidade Perfeita");
+    Serial.print("Nivel de umidade perfeita \n");   
+  }
     
-  
   distancia = calculod(); // chama a função para calcular a agua do reservatorio;
   
   if(distancia >= REPOR_AGUA)
