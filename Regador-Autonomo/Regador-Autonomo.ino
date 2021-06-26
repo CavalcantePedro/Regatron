@@ -39,9 +39,19 @@ void BombaDeAgua() //Função para realizar a rega
   digitalWrite(AtivacaoRele, HIGH);//Ativa a bomba de agua e começa o processo de irrigação
   delay(500);//Delay para normalizar a corrente e não bagunçar a comunicação com o LCD
   limpaTela();
+  
   while(cont != QTD_MOV_SERVO )
   {
-    switch(cont) //Animação no LCD
+    AnimLCD(cont);
+    MovServo();
+    cont++;
+  }
+  digitalWrite(AtivacaoRele, LOW);//Desativa a bomba
+}
+
+void AnimLCD(int cont)//Função para realizar a animação que irá aparecer no LCD
+{
+  switch(cont) 
     {
       case 1:
         lcd.setCursor(0, 1);
@@ -56,7 +66,11 @@ void BombaDeAgua() //Função para realizar a rega
         lcd.print("Regando...");
         break;
     }
-    //Movimento do servo
+}
+
+void MovServo() //Função para movimentação do servo motor
+{
+      //Movimento do servo
     if(ang <= ANGULO_MIN)
     {
       for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
@@ -75,9 +89,6 @@ void BombaDeAgua() //Função para realizar a rega
         Serial.println(ang);
       }
     }
-    cont++;
-  }
-  digitalWrite(AtivacaoRele, LOW);//Desativa a bomba
 }
 
 double calculod(){
