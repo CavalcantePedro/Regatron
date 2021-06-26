@@ -14,15 +14,13 @@
 #define AtivacaoRele 2 //Definindo pino digital para o rele
 #define TRIGGER 5 //Definindo pino para o trigger do sensor ultrassonico
 #define ECHO 6 //Definindo pino para o echo do sensor ultrassonico
-#define BuzzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
+#define BuzzerUltrassonico 7 //Definindo pino para o buzzer do sensor ultrassonico
 #define REPOR_AGUA 13 //Distacia necessaria para repor a agua do reservatorio atraves do sensor ultrassonico 
 // Angulos que são flexiveis, de acordo com o vaso utilizado muda, como o vaso que usamos foi pequeno os angulos foram esses
 #define ANGULO_MIN 40 //Angulo minimo para o servo
 #define ANGULO_MAX 100//Angulo maximo para o servo
 // Movimento realizado pelo servo motor, o qual estará acoplado com uma mangueira
 #define QTD_MOV_SERVO 4 //Quantidade de movimento que o servo irá fazer
-// Frequencia tocada pelo buzzer
-#define SOM 279.6 //Tom do buzzer
 //Definindo variavel global para usar na função delay, o qual funciona de 1 em 1 segundo, checando a temperatura da planta
 #define TEMPO_CHEC  1000 //Tempo de checagem 
 //Definindo o tempo de execução do movimento do servo motor
@@ -107,7 +105,7 @@ void setup() {
   Serial.begin(9600); //Porta serial, taxa de dados 9600 bps(bits por segundo) 
   pinMode(TRIGGER, OUTPUT); //Porta de saida do ultrassonico
   pinMode(ECHO, INPUT); //porta de entrada do ultrassonico
-  pinMode(BuzzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
+  pinMode(BuzzerUltrassonico, OUTPUT); //porta do buzzer do ultrassonico
   lcd.begin(16, 2); //Define o número de colunas e linhas do Display, supondo que seja 16x2
   lcd.print("    Regatron");
 }
@@ -137,11 +135,11 @@ void loop()
     limpaTela();
     lcd.setCursor(0, 1);
     lcd.print("  REPOR AGUA!!");
-    tone(BuzzzerUltrassonico, SOM); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
+    digitalWrite(BuzzerUltrassonico, HIGH); //Se for necessario repor a agua no reservatorio o buzzer vai avisar
   }
   else
   {
-    noTone(BuzzzerUltrassonico); //Se nao, o buzzer vai se manter desligado
+    digitalWrite(BuzzerUltrassonico, LOW); //Se nao, o buzzer vai se manter desligado
   }
   
   Serial.print("distancia: ");
