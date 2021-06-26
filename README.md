@@ -21,14 +21,14 @@ Itens     |             Valor          |
 1 Módulo LCD   |        R$ 17,90       |
 1 Servo Motor |      R$ 12,00          |
 1 Sensor Ultrassônico |  R$ 10,00      |
-1 Buzzer Piezo |       R$ 10,67        |
+1 Buzzer 5V Ativo |       R$ 2,50      |
 1 Fonte externa 9V |    R$ 16,06       | 
 1 Chave Gangorra 2 Terminais | R$ 1,50 | 
 2 Garrafas Pets |      Reciclado       | 
 45 Jumpers      |    R$ 19,35          |
 1m Mangueira de Aquário |   R$ 1,60   |
 Materiais decorativos |   R$ 10,00     |
-Total                |   R$ 192.08     |
+Total                |   R$ 183,91     |
 
 
 
