@@ -52,47 +52,47 @@ void BombaDeAgua() //Função para realizar a rega
 void AnimLCD(int cont)//Função para realizar a animação que irá aparecer no LCD
 {
   switch(cont) 
-    {
-      case 1:
-        lcd.setCursor(0, 1);
-        lcd.print("Regando.");
-        break;
-      case 2:
-        lcd.setCursor(0, 1);
-        lcd.print("Regando..");
-        break;
-      default:
-        lcd.setCursor(0, 1);
-        lcd.print("Regando...");
-        break;
-    }
+  {
+    case 1:
+      lcd.setCursor(0, 1);
+      lcd.print("Regando.");
+      break;
+    case 2:
+      lcd.setCursor(0, 1);
+      lcd.print("Regando..");
+      break;
+    default:
+      lcd.setCursor(0, 1);
+      lcd.print("Regando...");
+      break;
+  }
 }
 
 void MovServo() //Função para movimentação do servo motor
 {
-      //Movimento do servo
-    if(ang <= ANGULO_MIN)
+  //Movimento do servo
+  if(ang <= ANGULO_MIN)
+  {
+    for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
     {
-      for(ang = ANGULO_MIN; ang <= ANGULO_MAX; ang++)
-      {
-        meuservo.write(ang);
-        delay(TEMPO_EXE);
-        Serial.println(ang);
-      }
+      meuservo.write(ang);
+      delay(TEMPO_EXE);
+      Serial.println(ang);
     }
-    else if (ang >= ANGULO_MAX)
+  }
+  else if (ang >= ANGULO_MAX)
+  {
+    for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
     {
-      for(ang = ANGULO_MAX; ang >= ANGULO_MIN; ang--)
-      {
-        meuservo.write(ang);
-        delay(TEMPO_EXE);
-        Serial.println(ang);
-      }
+      meuservo.write(ang);
+      delay(TEMPO_EXE);
+      Serial.println(ang);
     }
+  }
 }
 
-double calculod(){
-    
+double calculod()
+{
   digitalWrite(TRIGGER, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIGGER, LOW);
