@@ -10,6 +10,8 @@
 
 <div style="align: justify"> Este projeto, desenvolvido em grupo, objetiva a obtenção da última nota na disciplina de Introdução à Engenharia da Computação, da Universidade Federal da Paraíba <a href = http://ci.ufpb.br/>(UFPB).</a> Da mesma forma, visa o progresso sustentável unindo tecnologia e o meio ambiente.</div>
 
+<br>
+    <div style ="align: justify"> Para informações mais detalhadas, temos o nosso video de apresentação no <a href = "https://www.youtube.com/watch?v=EAiIXU2ocTk" /> Youtube.</a>
 
 ## Materiais Utilizados e Orçamento:
 Itens     |             Valor          |
